@@ -12,7 +12,7 @@ Generates static website with oldschool-wiki-like design from markdown file. Eac
 ## Usage
 ### To generate site for local tests:
 
-    python3 build3.py "http://website.url"
+    python3 build3.py
 
 ### To generate site for web:
 
