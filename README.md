@@ -2,7 +2,7 @@
 
 Generates static website with oldschool-wiki-like design from markdown file. Each paragraph(s) starting with `##` (2nd lvl header) becames a single page.
 
-## Install on linux
+## Install on Linux
 
     sudo apt-get install python3-mako python3-markdown python3-setuptools node-uglify
     sudo easy_install3 sh
