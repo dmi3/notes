@@ -10,7 +10,7 @@ import os,sys
 #Settings
 WEBSITE_TITLE = "Ubuntu Faq"
 DEFAULT_TAGS = "ubuntu"
-SOURCE = "notes.txt"
+SOURCE = "notes.md"
 logging.root.setLevel(logging.DEBUG)
 LINKS_ON_PAGE = 20
 PAGE_PATTERN = "From%dto%d"

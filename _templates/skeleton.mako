@@ -25,7 +25,6 @@
         <a rel="nofollow" href="/">article</a>
         <a rel="nofollow" href="/">edit</a>
         <a rel="nofollow" href="/">comment</a>
-        <b><a rel="nofollow" href="http://thexnews.com/contacts">Комментировать</a></b>
       </div>
 
       <div id="content" class="bordered">
@@ -65,7 +64,7 @@
     </div>
 
   <div id="footer">
-    <a href="http://dmi3.net">ц</a> <a href=''>Димоныч-"Wiki" ${version}</a></p>
+    <a href="http://dmi3.net">&copy;</a> <a href=''>Димоныч-"Wiki" ${version}</a></p>
   </div>
 </div>
 
