@@ -8,6 +8,8 @@ import logging
 import os,sys
 
 #Settings
+WEBSITE_TITLE = "Ubuntu Faq"
+DEFAULT_TAGS = "ubuntu"
 SOURCE = "notes.txt"
 logging.root.setLevel(logging.DEBUG)
 LINKS_ON_PAGE = 20
@@ -24,6 +26,8 @@ def materialize_template(template_name,fname,env):
   os.chdir("_templates")
 
   env['base_url']=BASE_URL
+  env['website_title']=WEBSITE_TITLE
+  env['default_tags']=DEFAULT_TAGS
   env['current_url']=BASE_URL+fname+".html"
   env['version']=VERSION
   

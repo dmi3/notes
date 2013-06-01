@@ -3,13 +3,13 @@
 <html dir="ltr" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
 
 <head>
-  <title>${title} - Ubuntu FAQ</title>
+  <title>${title} - ${website_title}</title>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-  <meta name="description" content="${title} Ubuntu Faq" />
+  <meta name="description" content="${title} ${website_title}" />
   % if tags is UNDEFINED:
-    <meta name="keywords" content="ubuntu, ${title}" />
+    <meta name="keywords" content="${default_tags}, ${title}" />
   % else:
-    <meta name="keywords" content="ubuntu, ${tags}" />
+    <meta name="keywords" content="${default_tags}, ${tags}" />
   %endif
   <meta name="verify-reformal" content="47570c0e20eec98528284fe7" />
   <link rel="stylesheet" href="style.css" type="text/css" media="screen" />
@@ -20,7 +20,6 @@
 
   <div id="container">
     <div id="wrapper">
-
 
       <div id="buttons">
         <a rel="nofollow" href="/">article</a>
@@ -45,7 +44,9 @@
     </div>
   
     <div id="navigation">
-      <div id="logo"><img src="ubuntu.png" alt="ubuntu"></div>
+      <div id="logo"><img src="logo.png" alt="${default_tags}"></div>
+      <h3 id="title">${website_title}</h3>
+
       <div class="otstup">navigation</div>
       
       <div id="menu" class="bordered">

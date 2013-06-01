@@ -2,10 +2,10 @@
 <html dir="ltr" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
 
 <head>
-  <title>OpenWRT изменить mac адрес сетевой карты
+  <title>Перезапустить сессию
  - Ubuntu Faq</title>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-  <meta name="description" content="OpenWRT изменить mac адрес сетевой карты
+  <meta name="description" content="Перезапустить сессию
  Ubuntu Faq" />
     <meta name="keywords" content="ubuntu, " />
   <meta name="verify-reformal" content="47570c0e20eec98528284fe7" />
@@ -26,22 +26,15 @@
       </div>
 
       <div id="content" class="bordered">
-        <h1>OpenWRT изменить mac адрес сетевой карты
+        <h1>Перезапустить сессию
 </h1>
 
         
-<h3>OpenWRT change wlan mac adress</h3>
-<p>http://192.168.1.1/
-Справа сверху кликнуть Administration
-Network-&gt;Interfaces-&gt;Wlan
-wan-&gt;кнопка edit
-В поле -- Additional Field -- выбрать MAC-Address
-Кнопка [Add]</p>
-<p>Альтернативный метод</p>
-<pre><code>uci set network.wan.macaddr="&lt;mac_address&gt;"
-uci commit network
-ifdown wan &amp;&amp; ifup wan
+<h3>Restart session</h3>
+<p>Одно из преимуществ Linux над Windows - это отсутствие необходимости перегружать компьютер после каждого чиха. Даже если какаянибудь программа зависнет намертво или загадит всю память, вместо перезагрузки компьютера, достаточно выполнить гораздо более быструю:</p>
+<pre><code>killall gnome-session
 </code></pre>
+<p>Что закроет все запущенные программы текущего юзера, и вернет вас к login screen</p>
       </div>
 
       <div id="cloud" class="bordered">
