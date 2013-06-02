@@ -1,0 +1,2 @@
+RewriteEngine on
+RewriteRule ^([^/\.]+)/?$ /ubuntu/$1.html [L,R=302]
