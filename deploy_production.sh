@@ -2,7 +2,8 @@
 
 cd $(dirname "${BASH_SOURCE[0]}")
 
-python3 build3.py "http://website.url/"
+python3 build3.py "http://website.url/" 123
+#where 123 is yandex search id obtainable on http://site.yandex.ru/searches/new/
 
 HOST="12.34.56.78" #remote ftp id
 USERPASS=$(cat /home/graf/incoming/esk_pass) #user in format user:password

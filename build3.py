@@ -10,6 +10,7 @@ import os,sys
 #Settings
 WEBSITE_TITLE = "Ubuntu Faq"
 DEFAULT_TAGS = "ubuntu"
+YANDEX_SEARCH_ID = ""
 SOURCE = "notes.md"
 logging.root.setLevel(logging.DEBUG)
 LINKS_ON_PAGE = 20
@@ -20,6 +21,9 @@ if (len(sys.argv)>1):
   BASE_URL = sys.argv[1]
   if BASE_URL[-1]!="/":
     BASE_URL+="/"
+
+  if len(sys.argv)>2:
+    YANDEX_SEARCH_ID=sys.argv[2]
 else:
   BASE_URL = "file://"+str(pwd()).replace("\n","")+"/_site/"
 
@@ -32,6 +36,7 @@ def materialize_template(template_name,fname,env):
   env['default_tags']=DEFAULT_TAGS
   env['current_url']=BASE_URL+fname+".html"
   env['version']=VERSION
+  env['yandex_search_id']=YANDEX_SEARCH_ID
   
   mylookup = TemplateLookup(directories=['.'],input_encoding='utf-8', output_encoding='utf-8', encoding_errors='replace')
   result = Template(filename=template_name+".mako",
@@ -134,6 +139,8 @@ def materialize_notes(source):
 
 def main():
   logging.debug('start')
+  if YANDEX_SEARCH_ID=="":
+    logging.warn('to enable seach on your site run\n    python3 build3.py "http://website.url/" 123\n    where 123 is yandex search id obtainable on http://site.yandex.ru/searches/new/')
 
   #clear output directory
   rm("-Rf",glob("_site/*"))
