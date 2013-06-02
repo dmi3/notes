@@ -2,7 +2,7 @@
 #!/usr/bin/python3
 
 from mako.lookup import Template,TemplateLookup
-from sh import cp,rm,pwd,mv,uglifyjs,cat,glob,cssoptimizer
+from sh import cp,rm,pwd,mv,mkdir,uglifyjs,cat,glob,cssoptimizer
 import markdown
 import logging
 import os,sys
@@ -142,7 +142,8 @@ def main():
   if YANDEX_SEARCH_ID=="":
     logging.warn('to enable seach on your site run\n    python3 build3.py "http://website.url/" 123\n    where 123 is yandex search id obtainable on http://site.yandex.ru/searches/new/')
 
-  #clear output directory
+  #create and clear output directory if necessary
+  mkdir("-p","_site/")
   rm("-Rf",glob("_site/*"))
   #copy static contant
   cp("-a",glob("_web/*"),"_site/")
