@@ -57,7 +57,7 @@
       <div class="otstup">search</div>
         <div id="search" class="bordered box">
 
-<div class="yandexform" onclick="return {'bg': '#ffffff', 'language': 'ru', 'encoding': '', 'suggest': false, 'tld': 'ru', 'site_suggest': false, 'webopt': false, 'fontsize': 13, 'arrow': false, 'fg': '#000000', 'logo': 'rb', 'websearch': false, 'type': 3}"><form action="http://thexnews.com/ubuntu/Y_Search" method="get"><input type="hidden" name="searchid" value="1834280"/><input name="text"/><input type="submit" value="Найти"/></form></div><script type="text/javascript" src="http://site.yandex.net/load/form/1/form.js" charset="utf-8"></script>
+<div class="yandexform" onclick="return {'bg': '#ffffff', 'language': 'ru', 'encoding': '', 'suggest': false, 'tld': 'ru', 'site_suggest': false, 'webopt': false, 'fontsize': 13, 'arrow': false, 'fg': '#000000', 'logo': 'rb', 'websearch': false, 'type': 3}"><form action="${base_url}Y_Search.html" method="get"><input type="hidden" name="searchid" value="1834280"/><input name="text"/><input type="submit" value="Найти"/></form></div><script type="text/javascript" src="http://site.yandex.net/load/form/1/form.js" charset="utf-8"></script>
 
         </div>
 

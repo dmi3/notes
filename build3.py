@@ -18,6 +18,8 @@ VERSION = 0.2
 
 if (len(sys.argv)>1):
   BASE_URL = sys.argv[1]
+  if BASE_URL[-1]!="/":
+    BASE_URL+="/"
 else:
   BASE_URL = "file://"+str(pwd()).replace("\n","")+"/_site/"
 
