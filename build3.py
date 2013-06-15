@@ -6,12 +6,13 @@ from sh import cp,rm,pwd,mv,mkdir,uglifyjs,cat,glob,cssoptimizer
 import markdown
 import logging
 import os,sys
+import datetime
 
 #Settings
 WEBSITE_TITLE = "Ubuntu Faq"
 DEFAULT_TAGS = "ubuntu"
 YANDEX_SEARCH_ID = ""
-SOURCE = "notes.md"
+SOURCE = "/home/graf/ubuntu_bible.txt"
 logging.root.setLevel(logging.DEBUG)
 LINKS_ON_PAGE = 20
 PAGE_PATTERN = "From%dto%d"
@@ -44,7 +45,11 @@ def materialize_template(template_name,fname,env):
     default_filters=['decode.utf8']).render(**env) 
 
   os.chdir("..")
-  f = open("_site/"+fname+".html",'w')  
+
+  if fname.count(".")==0:
+    fname+=".html"
+
+  f = open("_site/"+fname,'w')  
   f.write(result) 
   f.close()
 
@@ -54,8 +59,11 @@ def valid_fname(fname):
 def link(title,fname):
   link={}
   link["title"]=title
-  link["href"]=BASE_URL+fname+".html"
+  link["href"]=url(fname)
   return link
+
+def url(fname):
+  return BASE_URL+valid_fname(fname)+".html"
 
 def bake_note(title, tags, content):
   env={
@@ -79,7 +87,7 @@ def bake_toc(headers):
   for chunk in chunks:
     links=[]
     for header in chunk:
-      links.append(link(header,valid_fname(header)))
+      links.append(link(header,header))
 
     env={
       "title": "Заметки %d-%d" % (n+1,n+len(chunk)),
@@ -91,6 +99,17 @@ def bake_toc(headers):
     materialize_template("all",PAGE_PATTERN % (n,n+LINKS_ON_PAGE),env)
     n+=LINKS_ON_PAGE
 
+def bake_sitemap(headers):
+  links = []
+  for header in headers:
+    links.append(url(header))
+
+  env = {
+    "date": str(datetime.date.today()),
+    "links": links
+  }
+
+  materialize_template("sitemap","sitemap.xml",env)
 
 def materialize_notes(source):
   raw=open(source, 'r', encoding='utf-8').readlines()
@@ -106,7 +125,7 @@ def materialize_notes(source):
   for line in raw:
     l+=1
 
-    #add additional line before code for markdown parser
+    #add additional line before code to match markdown parser
     if line[0:4]=="    " and previous_line[1:4]!="   " and previous_line[0]!="#":
       line = "\n" + line
 
@@ -134,6 +153,7 @@ def materialize_notes(source):
       previous_line=line
 
   bake_toc(headers)
+  bake_sitemap(headers)
 
 
 
