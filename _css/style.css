@@ -18,7 +18,7 @@ div#footer p{margin:0;padding:5px 10px}
 div#footer a{display:inline;padding:0;color: #C6D5FD}
 
 div#wrapper{float:right;width: 100%; margin-left: -165px}
-div#content, div#cloud{margin:15px; margin-top:0px; margin-left: 165px; padding:15px; }
+div#content, div#cloud{margin:15px; margin-top:0px; margin-left: 165px; padding:25px 30px 40px 30px; }
 div#navigation{float:left;width:150px; }
 
 div#buttons{margin:0px; margin-top:15px; margin-left: 165px; padding:0px; }
@@ -117,4 +117,15 @@ margin-bottom:0px;
 .ac_over {
   background-color: Highlight;
   color: HighlightText;
+}
+
+p code {
+    background-color: #F8F8F8;
+    border: 1px solid #DADADA;
+    border-radius: 2px 2px 2px 2px;
+    font-family: Consolas,"Liberation Mono",Courier,monospace;
+    font-size: 12px;
+    margin: 0 2px;
+    padding: 1px 5px 0;
+    white-space: nowrap;
 }

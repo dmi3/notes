@@ -13,7 +13,8 @@
   %endif
   <meta name="verify-reformal" content="47570c0e20eec98528284fe7" />
   <link rel="stylesheet" href="style.css" type="text/css" media="screen" />
-  <script type="text/javascript" src="jquery.js"></script>
+  <script type="text/javascript" src="http://yandex.st/jquery/1.7.2/jquery.min.js"></script>
+  <script type="text/javascript" src="scripts.js"></script>
 
 </head>
 <body>
@@ -31,11 +32,18 @@
         <h1>${title}</h1>
 
         ${next.body()}
+
+
       </div>
 
       <div id="cloud" class="bordered">
 
-        
+        <div class="yashare-auto-init" 
+          data-yashareL10n="ru"
+          data-yashareType="none"
+          data-yashareLink="${current_url}"
+          data-yashareTitle="title"
+          data-yashareQuickServices="gplus,twitter,facebook,vkontakte"></div>        
 
       </div>
 
@@ -69,6 +77,10 @@
 </div>
 
   <%include file="counters.mako"/>
+
+        <script>        
+        $.getScript("http://yandex.st/share/share.js");
+      </script>
 
 </body>
 
