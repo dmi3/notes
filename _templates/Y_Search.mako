@@ -1,2 +1,0 @@
-<%inherit file="skeleton.mako" />
-<div id="yandex-results-outer" onclick="return {'tld': 'ru', 'language': 'ru', 'encoding': ''}"></div><script type="text/javascript" src="http://site.yandex.net/load/site.js" charset="utf-8"></script>
