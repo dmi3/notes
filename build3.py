@@ -12,7 +12,7 @@ import datetime
 WEBSITE_TITLE = "Ubuntu Faq"
 DEFAULT_TAGS = "ubuntu"
 YANDEX_SEARCH_ID = ""
-SOURCE = "notes.md"
+SOURCE = "/home/graf/projects/web/ubuntu_bible/content/ubuntu_faq.md"
 logging.root.setLevel(logging.DEBUG)
 LINKS_ON_PAGE = 20
 PAGE_PATTERN = "From%dto%d"
