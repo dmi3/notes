@@ -23,9 +23,9 @@
     <div id="wrapper">
 
       <div id="buttons">
-        <a rel="nofollow" href="/">article</a>
-        <a rel="nofollow" href="/">edit</a>
-        <a rel="nofollow" href="/">comment</a>
+        <a rel="nofollow" href="${current_url}">article</a>
+        <a rel="nofollow" href="https://github.com/dima2/notes/blob/content/ubuntu_faq.md">edit</a>
+        <a rel="nofollow" href="https://github.com/dima2/notes/blob/content/ubuntu_faq.md">comment</a>
       </div>
 
       <div id="content" class="bordered">
@@ -38,12 +38,17 @@
 
       <div id="cloud" class="bordered">
 
+        <a href="https://github.com/dima2/notes/blob/content/ubuntu_faq.md" class="github">Редактировать заметку на Github</a>
+
         <div class="yashare-auto-init" 
           data-yashareL10n="ru"
           data-yashareType="none"
           data-yashareLink="${current_url}"
           data-yashareTitle="title"
           data-yashareQuickServices="gplus,twitter,facebook,vkontakte"></div>        
+
+
+
 
       </div>
 
@@ -72,13 +77,13 @@
     </div>
 
   <div id="footer">
-    <a href="http://dmi3.net">&copy;</a> <a href=''>Димоныч-"Wiki" ${version}</a></p>
+    <a href="http://dmi3.net">&copy;</a> <a href='https://github.com/dima2/notes'>dima2/notes ${version}</a></p>
   </div>
 </div>
 
   <%include file="counters.mako"/>
 
-        <script>        
+      <script>        
         $.getScript("http://yandex.st/share/share.js");
       </script>
 
