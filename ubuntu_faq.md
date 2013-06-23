@@ -1292,9 +1292,6 @@ https://sites.google.com/site/easylinuxtipsproject/ssd#TOC-Avoid-quick-wear:-red
 Например я всегда ношу с собой 8гиговую флешку с Hiren Boot CD, Backtrack Linux, Ubuntu 32bit, Ubuntu 64bit
 http://www.pendrivelinux.com/multiboot-create-a-multiboot-usb-from-linux/
 
-##Temp
-kernel panic-not syncing: VFS: unable to mount root fs onunknown block(0,0)
-
 ##Перезапустить сессию
 ###Restart session
 Одно из преимуществ Linux над Windows - это отсутствие необходимости перегружать компьютер после каждого чиха. Даже если какаянибудь программа зависнет намертво или загадит всю память, вместо перезагрузки компьютера, достаточно выполнить гораздо более быструю:
