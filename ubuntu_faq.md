@@ -1270,7 +1270,7 @@ http://frugaltech.happystoic.com/ssdlinux
 https://sites.google.com/site/easylinuxtipsproject/ssd#TOC-Avoid-quick-wear:-reduce-write-actions
 
 ##Обновить Intel SSD
-##Update Intel SSD firmware without CD-ROM
+###Update Intel SSD firmware without CD-ROM
 Обновить прошивку Intel SSD без CD-ROM, c помощью USB флешки. Потому что, серьезно, ну кто сейчас пользуется устаревшими, ненадежными и тормознутыми CD-ROM дисками? Что за издевательство предлагать этот способ как единственный путь обновления прошивки? как Может быть еще дискету подсунуть?
 
 Слава богу, есть современная альтернатива:
