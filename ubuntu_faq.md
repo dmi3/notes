@@ -1221,6 +1221,8 @@ Settings->Advanched Settings->Account->Define Rules->Forward
 Волшебная комманда которая запушит все изменения (включая удаленные файлы) из текущей папки в репозиторий: 
     git add * && git commit -a -m 'commit message' && git push origin master
 
+Для упрощения жизни рекомендую использовать скрипт который одной коммандой посинкается, выведет список измененных файлов, спросит commit message и запушит изменения в master - [git-sync](https://github.com/dima2/bin/blob/master/git-sync)
+
 ##Autocomplete don't work over shh
 запустите bash
     bash
@@ -1351,4 +1353,9 @@ http://www.pendrivelinux.com/multiboot-create-a-multiboot-usb-from-linux/
     sudo keytest /dev/input/event4
 После нажатия нужных кнопок, должен выводиться их код. Если этого не происходит, поменяйте `event4` на другой, например `event4`. После чего также измените `event3` на работающий в `/etc/default/esekeyd`.
 
+Чтобы при измененит также показывался уровень громкости в всплывающем уведомлении notify-osd - скачайте в папку `~/bin` скрипт [volume](https://github.com/dima2/bin/blob/master/volume) и пропишите в `/etc/esekeyd.conf`:
+    VOLUMEUP: sudo -u graf /home/graf/bin/volume up
+    VOLUMEDOWN: sudo -u graf /home/graf/bin/volume down
+    MUTE: sudo -u graf /home/graf/bin/volume mute
+Где вместо `graf` - ваш юзер.
 
