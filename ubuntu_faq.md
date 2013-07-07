@@ -1331,6 +1331,8 @@ http://www.pendrivelinux.com/multiboot-create-a-multiboot-usb-from-linux/
 ##Хоткеи не работают в полноэкранных играх
 ###Hotkeys and shortcuts don't work in full screen mode
 Например сделать так чтобы работали медиа (кнопки громкости и управления плеером с клавиатуры) в gzdoom.
+
+Для начала отключите все хоткеи на нужные кнопки в `gnome-control-center` и `ccsm`. Затем:
     sudo apt-get install esekeyd 
     sudo gedit /etc/esekeyd.conf
 Вставте текст:
