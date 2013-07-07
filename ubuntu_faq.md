@@ -1351,7 +1351,7 @@ http://www.pendrivelinux.com/multiboot-create-a-multiboot-usb-from-linux/
     
 Если работать не будет, запустите:
     sudo keytest /dev/input/event4
-После нажатия нужных кнопок, должен выводиться их код. Если этого не происходит, поменяйте `event4` на другой, например `event3`. После чего также измените `event3` на работающий в `/etc/default/esekeyd`.
+После нажатия нужных кнопок, должен выводиться их код (например `VOLUMEUP`). Если этого не происходит, поменяйте `event4` на другой, например `event3`. После чего также измените `event3` на работающий в `/etc/default/esekeyd` и `VOLUMEUP` в `/etc/esekeyd.conf`, если `keytest` показывет другие значения.
 
 Чтобы при измененииях также показывался уровень громкости в всплывающем уведомлении notify-osd - скачайте в папку `~/bin` скрипт [volume](https://github.com/dima2/bin/blob/master/volume) и пропишите в `/etc/esekeyd.conf`:
     VOLUMEUP: sudo -u graf /home/graf/bin/volume up
