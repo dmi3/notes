@@ -1337,6 +1337,7 @@ http://www.pendrivelinux.com/multiboot-create-a-multiboot-usb-from-linux/
     VOLUMEUP:pactl -- set-sink-volume 0 "+2%" &
     VOLUMEDOWN:pactl -- set-sink-volume 0 "-2%" &
     MUTE:amixer set Master toggle &
+Редактируйте:    
     sudo gedit /etc/default/esekeyd
 Установите `START_ESEKEYD=true` and `DAEMON_OPTS="/etc/esekeyd.conf /dev/input/event4"`
 Теперь можно запустить коммандой:
