@@ -1327,3 +1327,25 @@ http://www.pendrivelinux.com/multiboot-create-a-multiboot-usb-from-linux/
 Если не помогает
     driver=alsa
     dev=default
+
+##Хоткеи не работают в полноэкранных играх
+###Hotkeys and shortcuts don't work in full screen mode
+Например сделать так чтобы работали медиа (кнопки громкости и управления плеером с клавиатуры) в gzdoom.
+    sudo apt-get install esekeyd 
+    sudo gedit /etc/esekeyd.conf
+Вставте текст:
+    VOLUMEUP:pactl -- set-sink-volume 0 "+2%" &
+    VOLUMEDOWN:pactl -- set-sink-volume 0 "-2%" &
+    MUTE:amixer set Master toggle &
+    sudo gedit /etc/default/esekeyd
+Установите `START_ESEKEYD=true` and `DAEMON_OPTS="/etc/esekeyd.conf /dev/input/event4"`
+Теперь можно запустить коммандой:
+    sudo /etc/init.d/esekeyd start
+Результат `[fail]` в данном случае - норма :). Альтернативная комманда запуска:
+    sudo esekeyd /etc/esekeyd.conf /dev/input/event4
+    
+Если работать не будет, запустите:
+    sudo keytest /dev/input/event4
+После нажатия нужных кнопок, должен выводиться их код. Если этого не происходит, поменяйте `event4` на другой, например `event4`. После чего также измените `event3` на работающий в `/etc/default/esekeyd`.
+
+
