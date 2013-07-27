@@ -1359,3 +1359,6 @@ http://www.pendrivelinux.com/multiboot-create-a-multiboot-usb-from-linux/
     MUTE: sudo -u graf /home/graf/bin/volume mute
 Где вместо `graf` - ваш юзер.
 
+##Pianobar: Cannot access audio file: Forbidden
+/!\ Cannot access audio file: Forbidden.
+
