@@ -1332,6 +1332,7 @@ http://www.pendrivelinux.com/multiboot-create-a-multiboot-usb-from-linux/
 
 ##Хоткеи не работают в полноэкранных играх
 ###Hotkeys and shortcuts don't work in full screen mode
+А таже если хоткеи не работают в full screen приложениях. Например в Virtual Box.
 Например сделать так чтобы работали медиа (кнопки громкости и управления плеером с клавиатуры) в gzdoom.
 
 Для начала отключите все хоткеи на нужные кнопки в `gnome-control-center` и `ccsm`. Затем:
@@ -1361,4 +1362,26 @@ http://www.pendrivelinux.com/multiboot-create-a-multiboot-usb-from-linux/
 
 ##Pianobar: Cannot access audio file: Forbidden
 /!\ Cannot access audio file: Forbidden.
+Установите прокси на [ проверенный VPS в США](https://www.digitalocean.com/?refcode=550d5b856a3c).
+
+##Не устанавливаются драйвера Nvidia
+###Nvidia drivers install failed
+При попытке установить через `gnome-control-center` -> Additional drivers пишет
+Please have a look at the log file for details: see info in /var/log/jockey.log
+А `cat /var/log/jockey.log` выдает что-то вроде:
+/sys/module/nvidia_304_updates/drivers does not exist, cannot rebind nvidia_304_updates driver
+
+Скорее всего, не хватает компонентов ядра:
+
+    sudo apt-get purge nvidia-current
+    sudo apt-get install linux-source linux-image linux-headers-generic
+    sudo apt-get install nvidia-current
+
+##Flash на Youtube странные цвета
+###Flash inverted colors
+    sudo gedit /etc/adobe/mms.cfg
+#set
+EnableLinuxHWVideoDecode=1
+
+
 
