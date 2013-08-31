@@ -1390,7 +1390,7 @@ EnableLinuxHWVideoDecode=1
 Установите юзерскрипт http://userscripts.org/scripts/show/87011
 
 
-##recorMyDesktop проблемы со звуком
+##recordMyDesktop проблемы со звуком
 ###recordmydesktop no sound/quiet sound
 Не записывает звук вообще или записывает очень тихо и с шипением
 
