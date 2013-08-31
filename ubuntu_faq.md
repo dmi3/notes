@@ -1383,5 +1383,10 @@ Please have a look at the log file for details: see info in /var/log/jockey.log
 #set
 EnableLinuxHWVideoDecode=1
 
+Альтернатива:
+    sudo apt-get-install mozilla-plugin-vlc
+Запустите Firefox
+Установите аддон https://addons.mozilla.org/en-US/firefox/addon/greasemonkey
+Установите юзерскрипт http://userscripts.org/scripts/show/87011
 
 
