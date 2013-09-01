@@ -1361,6 +1361,14 @@ http://www.pendrivelinux.com/multiboot-create-a-multiboot-usb-from-linux/
 Где вместо `graf` - ваш юзер.
 
 ##Pianobar: Cannot access audio file: Forbidden
+Попробуйте установить последнюю версию:
+    git clone https://github.com/PromyLOPh/pianobar/
+    cd pianobar
+    sudo apt-get install libao-dev libmad0-dev libfaad-dev libgnutls-dev libjson0-dev libgcrypt11-dev
+    make
+    sudo make install
+
+
 /!\ Cannot access audio file: Forbidden.
 Установите прокси на [ проверенный VPS в США](https://www.digitalocean.com/?refcode=550d5b856a3c).
 
