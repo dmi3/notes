@@ -843,9 +843,11 @@ Then when playing the video go to "Audio >> Audio Track >> Track 2" to select th
     cd /etc/init.d/
     sudo gedit wakeonlanconfig
 Copypaste следующий текст
- #!/bin/bash
-ethtool -s eth0 wol g
-exit
+    #!/bin/bash
+    ethtool -s eth0 wol g
+    exit
+
+Далее
     sudo chmod a+x wakeonlanconfig
     sudo update-rc.d -f wakeonlanconfig defaults
 Проверка (ничего не выводиться - все ок)
