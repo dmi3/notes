@@ -851,9 +851,13 @@ Copypaste следующий текст
     sudo chmod a+x wakeonlanconfig
     sudo update-rc.d -f wakeonlanconfig defaults
 Проверка (ничего не выводиться - все ок)
-    sudo /etc/init.d/wakeonlanconfig
-Осталось включить поддержку Wake On Lan в BIOS и на рутере форварднуть какой-нибудь секретный порт на UDP 192.168.0.255:9 (broadcast:9)
+    sudo /etc/init.d/wakeonlanconfi
+Если появляется ошибка:
+    Cannot get current wake-on-lan settings: No such device
+      not setting wol
+то попробуйте в файле `wakeonlanconfig` вместо `eth0` вписать `eth1` или `eth2`... Такое бывает когда на компьютере несколько сетевых карт, и одна из них задисейблена.
 
+Осталось включить поддержку Wake On Lan в BIOS и на рутере форварднуть какой-нибудь секретный порт на UDP 192.168.0.255:9 (broadcast:9)
 
 WOL работает по MAC адресу!
 
