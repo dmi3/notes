@@ -710,7 +710,8 @@ nameserver 208.67.220.220
 C ключами
     ssh-keygen -t dsa
     cat key.pub >> ~/.ssh/authorized_keys
-    puttygen key -o key.ppk
+    sudo apt-get install putty-tools
+    puttygen key -o key.ppk #putty winscp, etc compatible keys
     sudo gedit /etc/ssh/sshd_config
 PasswordAuthentication no
     sudo /etc/init.d/ssh reload
@@ -1403,6 +1404,9 @@ EnableLinuxHWVideoDecode=1
 Установите аддон https://addons.mozilla.org/en-US/firefox/addon/greasemonkey
 Установите юзерскрипт http://userscripts.org/scripts/show/87011
 
+##XBMC с джойстиком слишком резкие движения
+Замапьте на стрелки клавиатуры [antimicro](http://www.ryochan7.com/projects/antimicro/)
+
 
 ##recordMyDesktop проблемы со звуком
 ###recordmydesktop no sound/quiet sound
@@ -1414,6 +1418,14 @@ EnableLinuxHWVideoDecode=1
 * Если вы записываете звук с микрофона - убедитесь что Fron Microphone не установлен Mute и нормальная громкость. Если вы записываете звук с компьютера - убедитесь в том же для `Monitor of ...`
 * pavucontrol->Recording. Найдите там recordmydesktop. Если вы записываете звук с микрофона - в `Capture from` должен стоять `Built In...`. Если вы записываете звук с компьютера - в `Capture from` должен стоять `Monitor of ...`
 * Вообще большинство проблем со звуком в Pulse Audio связано с тем что в `pavucontrol` что-то замьючено, или наоборот незамьючено и создает помехи.
+
+##Сохранять историю bash из нескольких терминалов
+А не только из последнего как по умолчанию
+http://northernmost.org/blog/flush-bash_history-after-each-command/
+
+##Prepare USB flash for ext4
+sudo mkfs.ext4 -b 4096 -E stride=128 -E stripe-width=128 -O ^has_journal /dev/sdc1
+
 
 
 
