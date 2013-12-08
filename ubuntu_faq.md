@@ -1269,7 +1269,8 @@ network.standard-url.escape-utf8
 ##Время загрузки страницы
 wget -O /dev/null http://thexnews.com/do-not-eat.html 2>&1 | grep '\([0-9.]\+ [KM]B/s\)'
 
-##Жесткий дист
+##Жесткий диск
+###Disk utility
 palimpsest
 
 ##Копировать установку ubuntu с HDD на SSD
@@ -1424,8 +1425,23 @@ EnableLinuxHWVideoDecode=1
 http://northernmost.org/blog/flush-bash_history-after-each-command/
 
 ##Prepare USB flash for ext4
-sudo mkfs.ext4 -b 4096 -E stride=128 -E stripe-width=128 -O ^has_journal /dev/sdc1
+    sudo mkfs.ext4 -b 4096 -E stride=128 -E stripe-width=128 -O ^has_journal /dev/sdc1
 
+##3.8 kernel in 12.04
+    sudo apt-get purge linux-image-* linux-headers-*
+    sudo apt-get install linux-image-generic-lts-raring linux-headers-generic-lts-raring 
+    #sudo apt-get install --install-recommends linux-generic-lts-raring xserver-xorg-lts-raring     libgl1-mesa-glx-lts-raring
+    sudo purge nvidia*
+    sudo apt-get install nvidia-current
+    sudo reboot
 
+##Добавить аудиодорожку к mkv
+###Add additional audio track to mkv
+    mkvmerge -o output.mkv input.mkv audio_track.ac3
 
-
+##Btsync синхронизировать файлы с нормальными правами
+По умолчанию файлы может редактировать только пользователь под которым запущен btsync, а в случае если вы установили btsync-server это будет `root`. Т.е. другие пользователи редактировать файлы не смогут
+При установке, или запуском комманды
+    sudo dpkg-reconfigure btsync
+На вопрос про `UMASK` ввести `0011`
+Тогда новые файлы будут создаваться с правами `-rw-rw-rw-`
