@@ -1225,6 +1225,10 @@ Settings->Advanched Settings->Account->Define Rules->Forward
     cd repo
 Обновить проект:
     git pull
+Пуш без пароля (авторизация через ssh по ключу который добавляеьтся на <https://github.com/settings/ssh> например):
+    git remote set-url origin ssh://git@github.com/user/repo.git
+
+
 Волшебная комманда которая запушит все изменения (включая удаленные файлы) из текущей папки в репозиторий: 
     git add * && git commit -a -m 'commit message' && git push origin master
 
