@@ -1228,7 +1228,7 @@ Settings->Advanched Settings->Account->Define Rules->Forward
 Волшебная комманда которая запушит все изменения (включая удаленные файлы) из текущей папки в репозиторий: 
     git add * && git commit -a -m 'commit message' && git push origin master
 
-Для упрощения жизни рекомендую использовать скрипт который одной коммандой посинкается, выведет список измененных файлов, спросит commit message и запушит изменения в master - [git-sync](https://github.com/dima2/bin/blob/master/git-sync)
+Для упрощения жизни рекомендую использовать скрипт который одной коммандой посинкается, выведет список измененных файлов, спросит commit message и запушит изменения в master - [git-sync](https://github.com/dmi3/bin/blob/master/git-sync)
 
 ##Autocomplete don't work over shh
 запустите bash
@@ -1362,7 +1362,7 @@ http://www.pendrivelinux.com/multiboot-create-a-multiboot-usb-from-linux/
     sudo keytest /dev/input/event4
 После нажатия нужных кнопок, должен выводиться их код (например `VOLUMEUP`). Если этого не происходит, поменяйте `event4` на другой, например `event3`. После чего также измените `event3` на работающий в `/etc/default/esekeyd` и `VOLUMEUP` в `/etc/esekeyd.conf`, если `keytest` показывет другие значения.
 
-Чтобы при измененииях также показывался уровень громкости в всплывающем уведомлении notify-osd - скачайте в папку `~/bin` скрипт [volume](https://github.com/dima2/bin/blob/master/volume) и пропишите в `/etc/esekeyd.conf`:
+Чтобы при измененииях также показывался уровень громкости в всплывающем уведомлении notify-osd - скачайте в папку `~/bin` скрипт [volume](https://github.com/dmi3/bin/blob/master/volume) и пропишите в `/etc/esekeyd.conf`:
     VOLUMEUP: sudo -u graf /home/graf/bin/volume up
     VOLUMEDOWN: sudo -u graf /home/graf/bin/volume down
     MUTE: sudo -u graf /home/graf/bin/volume mute
@@ -1445,3 +1445,22 @@ http://northernmost.org/blog/flush-bash_history-after-each-command/
     sudo dpkg-reconfigure btsync
 На вопрос про `UMASK` ввести `0011`
 Тогда новые файлы будут создаваться с правами `-rw-rw-rw-`
+
+##udisks --mount produces Mount failed: Not Authorized
+    sudo gedit /usr/share/polkit-1/actions/org.freedesktop.udisks.policy
+Find section:
+    <action id="org.freedesktop.udisks.filesystem-mount"> 
+        ...
+    </action>
+Set parameters `allow_any` and `allow_inactive` to `yes`.
+
+##Enable VirtualBox 'External' authentication
+    sudo gedit /etc/pam.d/common-account
+Append:
+    account required        pam_unix.so broken_shadow
+
+##Ubuntu 12.04 зависает
+###Ubuntu 12.04 hangs
+Ubuntu 12.04 рандомно зависает. Иногда перестает отвечать на клавиатуру/мышь.
+Баг в compiz'e если что. Что-бы временно починить проблему его замените compiz на metacity - добавьте в автозагрузку:
+    metacity --replace
