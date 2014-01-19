@@ -146,7 +146,8 @@ a.github {
 }
 
 a.github:hover {
-    border-color: #51A7E8;
-    box-shadow: 0 0 5px rgba(81, 167, 232, 0.5);
-    text-decoration: none;
+  border-color: #51A7E8;
+  box-shadow: 0 0 5px rgba(81, 167, 232, 0.5);
+  text-decoration: none;
 }
+

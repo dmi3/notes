@@ -24,8 +24,8 @@
 
       <div id="buttons">
         <a rel="nofollow" href="${current_url}">article</a>
-        <a rel="nofollow" href="https://github.com/dima2/notes/blob/content/ubuntu_faq.md">edit</a>
-        <a rel="nofollow" href="https://github.com/dima2/notes/blob/content/ubuntu_faq.md">comment</a>
+        <a rel="nofollow" href="https://github.com/dima3/notes/blob/content/ubuntu_faq.md">edit</a>
+        <a rel="nofollow" href="https://github.com/dima3/notes/blob/content/ubuntu_faq.md">comment</a>
       </div>
 
       <div id="content" class="bordered">
@@ -77,7 +77,7 @@
     </div>
 
   <div id="footer">
-    <a href="http://dmi3.net">&copy;</a> <a href='https://github.com/dima2/notes'>dima2/notes ${version}</a></p>
+    <a href="http://dmi3.net">&copy;</a> <a href='https://github.com/dmi3/notes'>dmi3/notes ${version}</a></p>
   </div>
 </div>
 
