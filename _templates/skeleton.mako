@@ -24,8 +24,8 @@
 
       <div id="buttons">
         <a rel="nofollow" href="${current_url}">article</a>
-        <a rel="nofollow" href="https://github.com/dima3/notes/blob/content/ubuntu_faq.md">edit</a>
-        <a rel="nofollow" href="https://github.com/dima3/notes/blob/content/ubuntu_faq.md">comment</a>
+        <a rel="nofollow" href="https://github.com/dmi3/notes/blob/content/ubuntu_faq.md">edit</a>
+        <a rel="nofollow" href="https://github.com/dmi3/notes/blob/content/ubuntu_faq.md">comment</a>
       </div>
 
       <div id="content" class="bordered">
@@ -38,7 +38,7 @@
 
       <div id="cloud" class="bordered">
 
-        <a href="https://github.com/dima2/notes/blob/content/ubuntu_faq.md" class="github">Редактировать заметку на Github</a>
+        <a href="https://github.com/dmi3/notes/blob/content/ubuntu_faq.md" class="github">Редактировать заметку на Github</a>
 
         <div class="yashare-auto-init" 
           data-yashareL10n="ru"
