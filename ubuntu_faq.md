@@ -1228,6 +1228,10 @@ Settings->Advanched Settings->Account->Define Rules->Forward
 Пуш без пароля (авторизация через ssh по ключу который добавляеьтся на <https://github.com/settings/ssh> например):
     git remote set-url origin ssh://git@github.com/user/repo.git
 
+###Advanced
+Unrach file:
+    git update-index --assume-unchanged path/to/file
+
 
 Волшебная комманда которая запушит все изменения (включая удаленные файлы) из текущей папки в репозиторий: 
     git add * && git commit -a -m 'commit message' && git push origin master
@@ -1468,3 +1472,7 @@ Append:
 Ubuntu 12.04 рандомно зависает. Иногда перестает отвечать на клавиатуру/мышь.
 Баг в compiz'e если что. Что-бы временно починить проблему его замените compiz на metacity - добавьте в автозагрузку:
     metacity --replace
+
+##Проверить и пофиксить FAT32 флешку
+###Check and fix FAT32
+sudo dosfsck -w -r -l -a -v -t /dev/sdc1
