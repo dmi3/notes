@@ -1476,3 +1476,21 @@ Ubuntu 12.04 рандомно зависает. Иногда перестает 
 ##Проверить и пофиксить FAT32 флешку
 ###Check and fix FAT32
 sudo dosfsck -w -r -l -a -v -t /dev/sdc1
+
+##Нет звука в Star Wars: Kinghts of the Old Republic
+###SWKOTOR nosound
+Или же нету звука когда запускаете программу на другом  DISPLAY
+(Если вы установили согласно [инструкции](http://appdb.winehq.org/objectManager.php?sClass=version&iId=4124))
+    sudo gedit /etc/group
+
+find `audio:x:29:pulse,timidity`
+add your username `graf` like:
+
+    audio:x:29:pulse,timidity,graf
+
+##Сделать Libre Office чуть менее уродским
+
+1. Установите нормальную [GTK тему](http://craazyt.deviantart.com/art/Light-Greyness-Dark-Grey-GTK-Theme-V2-1-284520929)
+2. Установите менее ужасные иконки
+    sudo apt-get install libreoffice-style-sifr
+3. Libre Office -> Tools -> Options -> LibreOffice -> View -> Icon size and style -> Small : Sifr
