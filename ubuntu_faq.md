@@ -1493,5 +1493,8 @@ add your username `graf` like:
 1. Установите нормальную [GTK тему](http://craazyt.deviantart.com/art/Light-Greyness-Dark-Grey-GTK-Theme-V2-1-284520929)
 2. Установите менее ужасные иконки
     sudo apt-get install libreoffice-style-sifr
-    
-3. Libre Office -> Tools -> Options -> LibreOffice -> View -> Icon size and style -> Small : Sifr
+
+3. Libre Office -> Tools -> Options -> LibreOffice -> View:
+  Scaling: 99%
+  Icon size and style -> Small : Sifr
+
