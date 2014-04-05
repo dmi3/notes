@@ -1472,6 +1472,7 @@ Append:
 Ubuntu 12.04 рандомно зависает. Иногда перестает отвечать на клавиатуру/мышь.
 Баг в compiz'e если что. Что-бы временно починить проблему его замените compiz на metacity - добавьте в автозагрузку:
     metacity --replace
+Если с metacity UI начитает тормозить - установите [ulatencyd](http://www.webupd8.org/2014/04/get-better-linux-desktop-performance.html)
 
 ##Проверить и пофиксить FAT32 флешку
 ###Check and fix FAT32
@@ -1490,7 +1491,7 @@ add your username `graf` like:
 
 ##Сделать Libre Office чуть менее уродским
 
-1. Установите нормальную [GTK тему](http://craazyt.deviantart.com/art/Light-Greyness-Dark-Grey-GTK-Theme-V2-1-284520929)
+1. Установите нормальную [GTK тему](http://www.webupd8.org/2012/08/greybird-default-xubuntu-theme-gets.html)
 2. Установите менее ужасные иконки
     sudo apt-get install libreoffice-style-sifr
 
