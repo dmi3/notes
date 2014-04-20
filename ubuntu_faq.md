@@ -700,7 +700,7 @@ nameserver 208.67.220.220
 
 
 ##Возможность подключаться по SSH
-###Allow to connect via SSS
+###Allow to connect via SSH
 !tags:Сеть
     sudo apt-get install openssh-server
 Обязательно нужно сменить порт:
@@ -1238,9 +1238,12 @@ Unrach file:
 
 Для упрощения жизни рекомендую использовать скрипт который одной коммандой посинкается, выведет список измененных файлов, спросит commit message и запушит изменения в master - [git-sync](https://github.com/dmi3/bin/blob/master/git-sync)
 
-##Autocomplete don't work over shh
+##Autocomplete don't work over ssh
+Баш не запускается по умолчанию, и вы видите `$` как промпт
 запустите bash
     bash
+Чтобы bash всегда запускался при подключении по ssh выполните:
+    chsh -s /bin/bash
 
 ##Установка Seafile
 
@@ -1499,3 +1502,10 @@ add your username `graf` like:
   Scaling: 99%
   Icon size and style -> Small : Sifr
 
+
+##Просто установить OpenVPN server
+https://www.digitalocean.com/community/articles/how-to-install-openvpn-access-server-on-ubuntu-12-04
+
+##Основы безопасности
+###Security basics
+http://plusbryan.com/my-first-5-minutes-on-a-server-or-essential-security-for-linux-servers
