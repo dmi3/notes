@@ -1227,14 +1227,9 @@ Settings->Advanched Settings->Account->Define Rules->Forward
     git pull
 Пуш без пароля (авторизация через ssh по ключу который добавляеьтся на <https://github.com/settings/ssh> например):
     git remote set-url origin ssh://git@github.com/user/repo.git
+Начать игнорировать файл. Например чтобы заккомминть один раз с дефолтными настройками, а потом вписать туда логин пароль на настоящий, и эти данные не попали в обшщий репозиторий/github.
+    git update-index --assume-unchanged Settings.py
 
-###Advanced
-Unrach file:
-    git update-index --assume-unchanged path/to/file
-
-
-Волшебная комманда которая запушит все изменения (включая удаленные файлы) из текущей папки в репозиторий: 
-    git add * && git commit -a -m 'commit message' && git push origin master
 
 Для упрощения жизни рекомендую использовать скрипт который одной коммандой посинкается, выведет список измененных файлов, спросит commit message и запушит изменения в master - [git-sync](https://github.com/dmi3/bin/blob/master/git-sync)
 
