@@ -1376,6 +1376,8 @@ http://www.pendrivelinux.com/multiboot-create-a-multiboot-usb-from-linux/
 
 ##Pianobar: Cannot access audio file: Forbidden
 Попробуйте установить последнюю версию:
+https://gist.github.com/paulbaker3/2886698
+
     git clone https://github.com/PromyLOPh/pianobar/
     cd pianobar
     sudo apt-get install libao-dev libmad0-dev libfaad-dev libgnutls-dev libjson0-dev libgcrypt11-dev
@@ -1504,3 +1506,30 @@ https://www.digitalocean.com/community/articles/how-to-install-openvpn-access-se
 ##Основы безопасности
 ###Security basics
 http://plusbryan.com/my-first-5-minutes-on-a-server-or-essential-security-for-linux-servers
+
+## QBittorrent вылетает с Segmentation fault через некоторое время работы 
+### QBittorrent Segmentation fault
+
+Если запустить из консоли, ошибка выглядит так:
+
+    Catching SIGSEGV, please report a bug at http://bug.qbittorrent.org
+    and provide the following backtrace:
+    qBittorrent version: v2.9.7
+    stack trace:
+      /lib/x86_64-linux-gnu/libc.so.6 : ()+0x364a0  [0x7feba00424a0]
+      /lib/x86_64-linux-gnu/libcrypto.so.1.0.0 : RC4()+0x3bd  [0x7feba2ccd97d]
+    Segmentation fault
+
+Проблема в libtorrent. Как обычно: чтобы починить - надо обновиться:
+
+    sudo apt-add-repository -y ppa:surfernsk/internet-software
+    sudo apt-get update
+    sudo apt-get install libtorrent-rasterbar7 qbittorrent
+
+## XBMC does not receive AirPlay from Iphone
+(Assuming you are running XBMC on ubuntu)
+Open ports:
+    sudo ufw allow from 192.168.1.0/24 to 192.168.1.0/24 port 36666
+    sudo ufw allow from 192.168.1.0/24 to 192.168.1.0/24 port 36667
+
+
