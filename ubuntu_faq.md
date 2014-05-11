@@ -1507,8 +1507,8 @@ https://www.digitalocean.com/community/articles/how-to-install-openvpn-access-se
 ###Security basics
 http://plusbryan.com/my-first-5-minutes-on-a-server-or-essential-security-for-linux-servers
 
-## QBittorrent вылетает с Segmentation fault через некоторое время работы 
-### QBittorrent Segmentation fault
+##QBittorrent вылетает с Segmentation fault через некоторое время работы 
+###QBittorrent Segmentation fault
 
 Если запустить из консоли, ошибка выглядит так:
 
@@ -1526,7 +1526,7 @@ http://plusbryan.com/my-first-5-minutes-on-a-server-or-essential-security-for-li
     sudo apt-get update
     sudo apt-get install libtorrent-rasterbar7 qbittorrent
 
-## XBMC does not receive AirPlay from Iphone
+##XBMC does not receive AirPlay from Iphone
 (Assuming you are running XBMC on ubuntu)
 Open ports:
     sudo ufw allow from 192.168.1.0/24 to 192.168.1.0/24 port 36666
