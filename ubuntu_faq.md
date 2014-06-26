@@ -1414,7 +1414,9 @@ EnableLinuxHWVideoDecode=1
 Установите юзерскрипт http://userscripts.org/scripts/show/87011
 
 ##XBMC с джойстиком слишком резкие движения
-Замапьте на стрелки клавиатуры [antimicro](http://www.ryochan7.com/projects/antimicro/)
+Отключите joystic в настройках xbmc
+    sudo apt-get install qjoypad
+C помошью qjoypad замапьте кнопки джойстика на стрелки клавиатуры [qjoypad](http://qjoypad.sourceforge.net/)
 
 
 ##recordMyDesktop проблемы со звуком
@@ -1531,5 +1533,45 @@ http://plusbryan.com/my-first-5-minutes-on-a-server-or-essential-security-for-li
 Open ports:
     sudo ufw allow from 192.168.1.0/24 to 192.168.1.0/24 port 36666
     sudo ufw allow from 192.168.1.0/24 to 192.168.1.0/24 port 36667
+
+##Port forwarding:
+existin fwd:
+    iptables -t nat -L PREROUTING -n
+
+add fwd:
+    iptables -t nat -A PREROUTING -p tcp --dport 8585 -j DNAT --to-destination 192.168.0.106:8585
+
+##Open ports
+list open ports:
+    sudo iptables -L -n
+
+open port
+    iptables -I INPUT -p tcp --dport 25 -j ACCEPT
+
+    sudo netstat -lptu
+
+##Find process parent:
+    cat /proc/6526/status | grep PPid
+
+##Git fails on gnome-ssh-askpass
+    unset SSH_ASKPASS
+
+##Which shell are you running
+    echo $SHELL
+
+##Which Linux distribution are you running
+    cat /etc/*-release
+    cat /proc/version
+
+##List all mounted devices
+cat /proc/mounts
+
+##Free space
+
+du -skha * | sort -hnr
+
+recursive
+
+du -sch .[!.]* * |sort -h
 
 
