@@ -1233,7 +1233,7 @@ Settings->Advanched Settings->Account->Define Rules->Forward
 
 Для упрощения жизни рекомендую использовать скрипт который одной коммандой посинкается, выведет список измененных файлов, спросит commit message и запушит изменения в master - [git-sync](https://github.com/dmi3/bin/blob/master/git-sync)
 
-Если вы все-таки хотите визуального сравнения файлов - рекомендую
+Если вы все-таки хотите визуального сравнения изменений рекомендую установить:
     gitg
 
 ##Autocomplete don't work over ssh
