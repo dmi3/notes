@@ -1577,4 +1577,10 @@ recursive
 
 du -sch .[!.]* * |sort -h
 
+##Выполнять скрипт при старте системы:
+###Run script at startup
+    crontab -e
+Добавить строчку
+    @reboot /path/to/script
+
 
