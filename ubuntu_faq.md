@@ -1456,7 +1456,7 @@ http://northernmost.org/blog/flush-bash_history-after-each-command/
 По умолчанию файлы может редактировать только пользователь под которым запущен btsync, а в случае если вы установили btsync-server это будет `root`. Т.е. другие пользователи редактировать файлы не смогут
 При установке, или запуском комманды
     sudo dpkg-reconfigure btsync
-На вопрос про `UMASK` ввести `0011`
+На вопрос про `UMASK` ввести `0002`
 Тогда новые файлы будут создаваться с правами `-rw-rw-rw-`
 
 ##udisks --mount produces Mount failed: Not Authorized
