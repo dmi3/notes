@@ -1537,50 +1537,141 @@ Open ports:
     sudo ufw allow from 192.168.1.0/24 to 192.168.1.0/24 port 36666
     sudo ufw allow from 192.168.1.0/24 to 192.168.1.0/24 port 36667
 
-##Port forwarding:
-existin fwd:
-    iptables -t nat -L PREROUTING -n
-
-add fwd:
-    iptables -t nat -A PREROUTING -p tcp --dport 8585 -j DNAT --to-destination 192.168.0.106:8585
-
-##Open ports
-list open ports:
-    sudo iptables -L -n
-
-open port
-    iptables -I INPUT -p tcp --dport 25 -j ACCEPT
-
-    sudo netstat -lptu
-
-##Find process parent:
-    cat /proc/6526/status | grep PPid
-
-##Git fails on gnome-ssh-askpass
-    unset SSH_ASKPASS
-
-##Which shell are you running
-    echo $SHELL
-
-##Which Linux distribution are you running
-    cat /etc/*-release
-    cat /proc/version
-
-##List all mounted devices
-cat /proc/mounts
-
-##Free space
-
-du -skha * | sort -hnr
-
-recursive
-
-du -sch .[!.]* * |sort -h
-
 ##Выполнять скрипт при старте системы:
 ###Run script at startup
     crontab -e
 Добавить строчку
     @reboot /path/to/script
 
+## Port forwarding:
+List Existing Fwd:
+    iptables -t nat -L PREROUTING -n
 
+Add Fwd:
+    iptables -t nat -A PREROUTING -p tcp --dport 8585 -j DNAT --to-destination 192.168.0.106:8585
+
+Delete Fwd:
+    iptables -vnL -t nat --line-numbers
+    iptables -t nat -D PREROUTING $NUMBER
+
+## Open Ports
+
+List open ports
+    sudo iptables -L -n
+    service iptables status
+
+List programs what listening on ports
+    sudo netstat -lptu
+
+Open port
+    iptables -I INPUT -p tcp --dport 25 -j ACCEPT
+
+## Delete firewall iptables rule
+Replace `-A` to `-D` on input command
+
+OR Find the number:
+    service iptables status
+    iptables -vnL --line-numbers
+    iptables -D INPUT $NUMBER
+
+## Find process parent:
+    cat /proc/$PID/status | grep PPid
+
+## Git fails on gnome-ssh-askpass
+    unset SSH_ASKPASS
+
+## Which shell are you running 
+(bash/tcsh/etc)
+    echo $SHELL
+
+## Which Linux distribution are you running
+    cat /etc/*-release
+    cat /proc/version
+
+## List all mounted devices
+    cat /proc/mounts
+
+## Free space
+    du -skha * | sort -hnr
+
+recursive
+    du -sch .[!.]* * |sort -h
+
+## Linux prompt
+    export PS1="\e[1;30m[\u@\h \w] \e[m"
+
+##  MySql start on Windows
+    root/pwd
+    net start MySQL
+
+3# Apache HTTPd file location
+http://wiki.apache.org/httpd/DistrosDefaultLayout#Fedora_Core.2C_CentOS.2C_RHEL:
+cat /etc/httpd/conf/httpd.conf
+
+## Tomcat add memory
+    nano /opt/apache-tomcat-7.0.55/bin/catalina.sh
+
+    export CATALINA_OPTS="$CATALINA_OPTS -Denv=prod -Xms256m -Xmx2048m -XX:PermSize=512m"
+
+## MySql Default port
+    3306
+
+## MySql Allow remote connections:
+    nano /etc/my.cnf
+set:
+    bind_adress = 0.0.0.0
+    service mysql restart
+
+    GRANT ALL ON taf_performance.* TO 'saiku_user'@'%' IDENTIFIED BY 'password';
+    flush privileges;
+
+## MySql log all sqls to file
+
+    SET global log_output = 'FILE';
+    SET global general_log_file='/tmp/mysql.log';
+    SET global general_log = 1;
+
+    set foreign_key_checks=0;
+
+## Git change commit message before push
+    git commit --amend -m "New commit message"
+
+## Random permission denied on Red Hat or CentOS
+SELinux may be installed, which is completely independent [level of security](https://en.wikipedia.org/wiki/Security-Enhanced_Linux). And It ignores existing rights system and root!
+
+Check if enabled:
+    getenforce
+    sestatus
+
+List restrictions in real time:
+    tail -n 0 -f /var/log/audit/audit.log
+
+List types:
+    ls -Z
+    ps -Z
+
+Example (add apache user write to graphite):
+    chcon -R -h -t httpd_sys_content_t /opt/graphite/storage
+
+Disable at all:
+    echo 0 > /selinux/enforce
+
+## YUM find which package file belongs to:
+    yum whatprovides /usr/lib/python2.6/site-packages/txamqp/codec.py
+List all files in package:
+    repoquery -l $PKG
+
+## Pip show installed package version
+    pip show --files $PKG
+List installable versions:
+    pip install --no-deps --no-install txamqp -v
+
+## RedHat/CentOS smart & context aware bash completion like in Ubuntu
+    yum -y install bash-completion
+Logout/Login
+
+## Bash echo exitcode
+    echo $?
+
+## Stop firefox from copying http://http://
+`about:config` -> `browser.urlbar.trimURLs` set to `false`
