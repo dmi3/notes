@@ -1675,3 +1675,10 @@ Logout/Login
 
 ## Stop firefox from copying http://http://
 `about:config` -> `browser.urlbar.trimURLs` set to `false`
+
+## Kodi префикс DISPLAY=":0.1" игнорируеться.
+### Kodi ignores DISPLAY=":0.1" prefix
+
+Its now ovveriden by System->Settings->Monitor 
+
+В новых версиях Kodi префикс DISPLAY=":0.1" игнорируеться. Чтобы запустить Kodi на другом мониторе надо зайти System->Settings->Monitor и выбрать порт на котором подключен монитор.
