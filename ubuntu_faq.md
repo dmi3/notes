@@ -1676,7 +1676,7 @@ Logout/Login
 ## Stop firefox from copying http://http://
 `about:config` -> `browser.urlbar.trimURLs` set to `false`
 
-## Kodi префикс DISPLAY=":0.1" игнорируеться.
+## Kodi префикс DISPLAY игнорируеться.
 ### Kodi ignores DISPLAY=":0.1" prefix
 
 Its now ovveriden by System->Settings->Monitor 
