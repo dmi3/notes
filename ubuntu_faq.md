@@ -1682,3 +1682,51 @@ Logout/Login
 Its now ovveriden by System->Settings->Monitor 
 
 В новых версиях Kodi префикс DISPLAY=":0.1" игнорируеться. Чтобы запустить Kodi на другом мониторе надо зайти System->Settings->Monitor и выбрать порт на котором подключен монитор.
+
+##Починить китайский планшет
+###Fix china tablet
+Если зависает на загрузке
+http://mytabletguru.com/china-tablet-pattern-unlocking-software/
+
+## Spotify Ubuntu 12.04
+spotify: error while loading shared libraries: libudev.so.1
+
+    sudo ln -sf /lib/x86_64-linux-gnu/libudev.so.0 /lib/x86_64-linux-gnu/libudev.so.1
+
+## BtSync keep on 1.4 do not upgrade to 2.0
+
+sudo rm -f /etc/apt/sources.list.d/tuxpoldo-btsync*.list /etc/apt/sources.list.d/btsync.list
+sh -c "$(curl -fsSL http://debian.yeasoft.net/add-btsync14-repository.sh)"
+
+<http://forum.bittorrent.com/topic/18974-debian-and-ubuntu-server-unofficial-packages-for-bittorrent-sync/page-34#entry100630>    
+
+## Sublime Text weird fonts
+    nano ~/.fonts.conf
+
+    <?xml version="1.0"?><!DOCTYPE fontconfig SYSTEM "fonts.dtd">
+    <fontconfig>
+     <match target="font">
+      <edit mode="assign" name="rgba">
+       <const>none</const>
+      </edit>
+     </match>
+     <match target="font">
+      <edit mode="assign" name="hinting">
+       <bool>true</bool>
+      </edit>
+     </match>
+     <match target="font">
+      <edit mode="assign" name="hintstyle">
+       <const>hintslight</const>
+      </edit>
+     </match>
+     <match target="font">
+      <edit mode="assign" name="antialias">
+       <bool>true</bool>
+      </edit>
+     </match>
+    </fontconfig>
+
+## Unpack .eml    
+    sudo apt-get install mpack
+    munpack -t mail.eml
